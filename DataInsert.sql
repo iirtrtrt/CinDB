@@ -68,112 +68,190 @@ values ('Scary Movie', 2000, 'Keenen Ivory Wayans', 'US', 88, '2021/01/01', '202
 
 
 -- Table Actor
-insert into Actor (MovieID, Name)
-values (1, 'Anna Faris'),
-       (1, 'Jon Abrahams'),
-       (1, 'Carmen Electra'),
-       (1, 'Shannon Elizabeth'),
-       (1, 'Kurt Fuller'),
-       (1, 'Regina Hall'),
-       (1, 'Lochlyn Munro'),
-       (1, 'Cheri Oteri'),
-       (1, 'Dave Sheridan'),
-       (1, 'Marlon Wayans'),
-       (1, 'Shawn Wayans')
+insert into Actor (Name)
+values ('Anna Faris'),
+       ('Jon Abrahams'),
+       ('Carmen Electra'),
+       ('Shannon Elizabeth'),
+       ('Kurt Fuller'),
+       ('Regina Hall'),
+       ('Lochlyn Munro'),
+       ('Cheri Oteri'),
+       ('Dave Sheridan'),
+       ('Marlon Wayans'),
+       ('Shawn Wayans'),  -- Scary Movie, 11
+--        ('Shawn Wayans'),
+--        ('Marlon Wayans'),
+       ('Tori Spelling'),
+       ('Andy Richter'),
+       ('Natasha Lyonne'),
+       ('Chris Elliott'),
+       ('Tim Curry'),     -- Scary Movie 2, 16
+--        ('Anna Faris'),
+       ('Anthony Anderson'),
+       ('Kevin Hart'),
+       ('Leslie Nielsen'),
+       ('Camryn Manheim'),
+       ('Simon Rex'),
+       ('George Carlin'),
+       ('Queen Latifah'),
+       ('Eddie Griffin'),
+       ('Denise Richards'),
+--        ('Regina Hall'),
+       ('Charlie Sheen'), -- Scary Movie 3, 26
+--        ('Anna Faris'),
+--        ('Regina Hall'),
+       ('Craig Bierko'),
+       ('Bill Pullman'),
+--        ('Anthony Anderson'),
+--        ('Carmen Electra'),
+--        ('Chris Elliott'),
+--        ('Kevin Hart'),
+       ('Cloris Leachman'),
+       ('Michael Madsen'),
+       ('Phil McGraw'),
+--        ('Leslie Nielsen'),
+       ('Shaquille O''Neal'),
+       ('Molly Shannon'), -- Scary Movie 4, 33
+       ('Ashley Tisdale'),
+--        ('Simon Rex'),
+       ('Erica Ash'),
+       ('Katrina Bowden'),
+       ('Terry Crews'),
+       ('Heather Locklear'),
+       ('J. P. Manoux'),
+       ('Mac Miller'),
+       ('Jerry O''Connell'),
+--        ('Molly Shannon'),
+       ('Snoop Dogg'),
+       ('Kate Walsh'),
+       ('Katt Williams'), -- Scary Movie 5, 44
+       ('Emma Roberts'),
+       ('Luke Bracey'),   -- Holidate, 46
+       ('Song Kang-ho'),
+       ('Lee Sun-kyun'),
+       ('Cho Yeo-jeong'),
+       ('Choi Woo-shik'),
+       ('Park So-dam'),
+       ('Lee Jung-eun'),
+       ('Jang Hye-jin'),  -- Parasite, 53
+       ('Robert Downey Jr.'),
+       ('Chris Evans'),
+       ('Mark Ruffalo'),
+       ('Chris Hemsworth'),
+       ('Scarlett Johansson'),
+       ('Jeremy Renner'),
+       ('Don Cheadle'),
+       ('Paul Rudd'),
+       ('Brie Larson'),
+       ('Karen Gillan'),
+       ('Danai Gurira'),
+       ('Benedict Wong'),
+       ('Jon Favreau'),
+       ('Bradley Cooper'),
+       ('Gwyneth Paltrow'),
+       ('Josh Brolin'),   -- Avengers: Endgame, 69
+       ('Hugh Jackman'),
+       ('Russell Crowe'),
+       ('Anne Hathaway'),
+       ('Amanda Seyfried'),
+       ('Eddie Redmayne'),
+       ('Helena Bonham Carter'),
+       ('Sacha Baron Cohen') -- Les Misérables, 76
 
-insert into Actor (MovieID, Name)
-values (2, 'Shawn Wayans'),
-       (2, 'Marlon Wayans'),
-       (2, 'Tori Spelling'),
-       (2, 'Andy Richter'),
-       (2, 'Natasha Lyonne'),
-       (2, 'Chris Elliott'),
-       (2, 'Tim Curry')
 
-insert into Actor (MovieID, Name)
-values (3, 'Anna Faris'),
-       (3, 'Anthony Anderson'),
-       (3, 'Kevin Hart'),
-       (3, 'Leslie Nielsen'),
-       (3, 'Camryn Manheim'),
-       (3, 'Simon Rex'),
-       (3, 'George Carlin'),
-       (3, 'Queen Latifah'),
-       (3, 'Eddie Griffin'),
-       (3, 'Denise Richards'),
-       (3, 'Regina Hall'),
-       (3, 'Charlie Sheen')
+-- Table Actor
+declare @AID int = 1;
 
-insert into Actor (MovieID, Name)
-values (4, 'Anna Faris'),
-       (4, 'Regina Hall'),
-       (4, 'Craig Bierko'),
-       (4, 'Bill Pullman'),
-       (4, 'Anthony Anderson'),
-       (4, 'Carmen Electra'),
-       (4, 'Chris Elliott'),
-       (4, 'Kevin Hart'),
-       (4, 'Cloris Leachman'),
-       (4, 'Michael Madsen'),
-       (4, 'Phil McGraw'),
-       (4, 'Leslie Nielsen'),
-       (4, 'Shaquille O''Neal'),
-       (4, 'Molly Shannon')
+-- Scary Movie
+while @AID < 12
+    begin
+        insert into MovieIn (MovieID, ActorID)
+        values (1, @AID)
+        set @AID = @AID + 1
+    end
 
-insert into Actor (MovieID, Name)
-values (5, 'Ashley Tisdale'),
-       (5, 'Simon Rex'),
-       (5, 'Erica Ash'),
-       (5, 'Katrina Bowden'),
-       (5, 'Terry Crews'),
-       (5, 'Heather Locklear'),
-       (5, 'J. P. Manoux'),
-       (5, 'Mac Miller'),
-       (5, 'Jerry O''Connell'),
-       (5, 'Molly Shannon'),
-       (5, 'Snoop Dogg'),
-       (5, 'Kate Walsh'),
-       (5, 'Katt Williams')
 
-insert into Actor (MovieID, Name)
-values (6, 'Emma Roberts'),
-       (6, 'Luke Bracey')
+-- Scary Movie 2
+while @AID < 17
+    begin
+        insert into MovieIn (MovieID, ActorID)
+        values (2, @AID)
+        set @AID = @AID + 1
+    end
+insert into MovieIn (MovieID, ActorID)
+values (2, 10),
+       (2, 11)
 
-insert into Actor
-values (7, 'Song Kang-ho'),
-       (7, 'Lee Sun-kyun'),
-       (7, 'Cho Yeo-jeong'),
-       (7, 'Choi Woo-shik'),
-       (7, 'Park So-dam'),
-       (7, 'Lee Jung-eun'),
-       (7, 'Jang Hye-jin')
+-- Scary Movie 3
+while @AID < 27
+    begin
+        insert into MovieIn (MovieID, ActorID)
+        values (3, @AID)
+        set @AID = @AID + 1
+    end
+insert into MovieIn (MovieID, ActorID)
+values (3, 1),
+       (3, 6)
 
-insert into Actor (MovieID, Name)
-values (8, 'Robert Downey Jr.'),
-       (8, 'Chris Evans'),
-       (8, 'Mark Ruffalo'),
-       (8, 'Chris Hemsworth'),
-       (8, 'Scarlett Johansson'),
-       (8, 'Jeremy Renner'),
-       (8, 'Don Cheadle'),
-       (8, 'Paul Rudd'),
-       (8, 'Brie Larson'),
-       (8, 'Karen Gillan'),
-       (8, 'Danai Gurira'),
-       (8, 'Benedict Wong'),
-       (8, 'Jon Favreau'),
-       (8, 'Bradley Cooper'),
-       (8, 'Gwyneth Paltrow'),
-       (8, 'Josh Brolin')
+-- Scary Movie 4
+while @AID < 34
+    begin
+        insert into MovieIn (MovieID, ActorID)
+        values (4, @AID)
+        set @AID = @AID + 1
+    end
+insert into MovieIn (MovieID, ActorID)
+values (4, 1),
+       (4, 6),
+       (4, 3),
+       (4, 15),
+       (4, 17),
+       (4, 18),
+       (4, 19)
 
-insert into Actor (MovieID, Name)
-values (9, 'Hugh Jackman'),
-       (9, 'Russell Crowe'),
-       (9, 'Anne Hathaway'),
-       (9, 'Amanda Seyfried'),
-       (9, 'Eddie Redmayne'),
-       (9, 'Helena Bonham Carter'),
-       (9, 'Sacha Baron Cohen')
+-- Scary Movie 5
+while @AID < 45
+    begin
+        insert into MovieIn (MovieID, ActorID)
+        values (5, @AID)
+        set @AID = @AID + 1
+    end
+insert into MovieIn (MovieID, ActorID)
+        values (5, 21),
+               (5, 33)
+
+-- Holidate
+while @AID < 47
+    begin
+        insert into MovieIn (MovieID, ActorID)
+        values (6, @AID)
+        set @AID = @AID + 1
+    end
+
+-- Parasite
+while @AID < 54
+    begin
+        insert into MovieIn (MovieID, ActorID)
+        values (7, @AID)
+        set @AID = @AID + 1
+    end
+
+-- Avengers: Endgame
+while @AID < 70
+    begin
+        insert into MovieIn (MovieID, ActorID)
+        values (8, @AID)
+        set @AID = @AID + 1
+    end
+
+-- Les Misérables
+while @AID < 77
+    begin
+        insert into MovieIn (MovieID, ActorID)
+        values (9, @AID)
+        set @AID = @AID + 1
+    end
 
 
 -- Table Time
@@ -241,9 +319,9 @@ declare @SID  int = 1
 declare @lo   int
 
 -- Scary Movie 2 Schedule
-set @date = '2021/05/13'
+set @date = '2021/05/21'
 set @lo = 1
-while @date < '2021/05/16'
+while @date < '2021/05/24'
     begin
         while @lo < 5
             begin
@@ -257,9 +335,9 @@ while @date < '2021/05/16'
     end
 
 -- Parasite Schedule
-set @date = '2021/05/16'
+set @date = '2021/05/24'
 set @lo = 1
-while @date < '2021/05/19'
+while @date < '2021/05/27'
     begin
         while @lo < 5
             begin
@@ -273,9 +351,9 @@ while @date < '2021/05/19'
     end
 
 -- Avengers: Endgame Schedule
-set @date = '2021/05/19'
+set @date = '2021/05/27'
 set @lo = 1
-while @date < '2021/05/22'
+while @date < '2021/05/30'
     begin
         while @lo < 6
             begin
@@ -377,11 +455,16 @@ values (1, 1, 1002),
        (1, 1, 1005),
        (1, 1, 1006),
        (1, 1, 1007),
-       (0, 0, 0),
+       (1, 0, 0),
        (1, 1, 1009),
        (1, 1, 1003),
        (1, 1, 1003),
-       (1, 1, 1003)
+       (0, 0, 0),
+       (1, 1, 1003),
+       (0, 0, 0),
+       (1, 0, 0),
+       (0, 0, 0),
+       (0, 0, 0)
 
 
 -- Table Order
@@ -395,7 +478,7 @@ values (default, 3, 15, 1),
        (default, 5, 25, 7),
        (default, 5, 25, 8),
        (default, 10, 50, 9),
-       ('2021/05/11', 4, 20, 10),
+       ('2021/05/22', 4, 20, 10),
        (default, 2, 10, 11),
        (default, 3, 15, 12),
        (default, 1, 5, 13),
@@ -405,7 +488,12 @@ values (default, 3, 15, 1),
        (default, 5, 25, 17),
        (default, 6, 30, 18),
        (default, 3, 15, 19),
-       (default, 2, 10, 20)
+       ('2021/05/23', 2, 10, 20),
+       (default, 10, 50, 21),
+       (default, 3, 15, 22),
+       (default, 1, 5, 23),
+       (default, 4, 20, 24),
+       (default, 3, 15, 25)
 
 
 -- Ordering Ticket
@@ -523,9 +611,9 @@ update Ticket
 set IsAvailable = 0,
     OrderID     = 18
 where ScreeningID = 31
-    and (SeatID > 1
-        and SeatID < 5)
-   and (SeatID > 6
+  and (SeatID > 1
+    and SeatID < 5)
+  and (SeatID > 6
     and SeatID < 10)
 
 update Ticket
@@ -539,6 +627,37 @@ set IsAvailable = 0,
     OrderID     = 20
 where ScreeningID = 37
   and (SeatID = 4 or SeatID = 5)
+
+update Ticket
+set IsAvailable = 0,
+    OrderID     = 21
+where ScreeningID = 32
+  and SeatID > 0
+  and SeatID < 11
+
+update Ticket
+set IsAvailable = 0,
+    OrderID     = 22
+where ScreeningID = 24
+  and (SeatID = 3 or SeatID = 4 or SeatID = 5)
+
+update Ticket
+set IsAvailable = 0,
+    OrderID     = 23
+where ScreeningID = 24
+  and SeatID = 7
+
+update Ticket
+set IsAvailable = 0,
+    OrderID     = 24
+where ScreeningID = 10
+  and (SeatID = 2 or SeatID = 3 or SeatID = 4 or SeatID = 5)
+
+update Ticket
+set IsAvailable = 0,
+    OrderID     = 25
+where ScreeningID = 14
+  and (SeatID = 2 or SeatID = 3 or SeatID = 4)
 
 
 -- Passed Screening

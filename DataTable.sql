@@ -59,9 +59,17 @@ create table Movie
 
 create table Actor
 (
-    MovieID int          not null foreign key references Movie (MovieID),
-    Name    varchar(100) not null
+    ActorID int identity (1, 1) primary key not null,
+    Name    varchar(100)                    not null
 )
+
+
+create table MovieIn
+(
+    MovieID int not null foreign key references Movie (MovieID),
+    ActorID int not null foreign key references Actor (ActorID)
+)
+
 
 create table Time
 (
